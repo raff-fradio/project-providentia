@@ -25,8 +25,8 @@ public class App extends Application {
     public static void main(String[] args) {
 //        launch();
     	Randomizer rd = new Randomizer();
-//    	Thread thread = new Thread(rd);
-//    	thread.start();
+    	Thread thread = new Thread(rd);
+    	thread.start();
     }
 
 }
