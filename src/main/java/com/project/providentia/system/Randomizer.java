@@ -6,7 +6,7 @@ public class Randomizer implements Runnable{
 	public double getRandomTemp(double min, double max) {
 		return (new Random().nextDouble()*(max-min)+min);
 	}
-	public double getRandomWindspeed(double min, double max) {
+	public double getRandomWindSpeed(double min, double max) {
 		return (new Random().nextDouble()*(max-min)+min);
 	}
 	public Boolean getRandomFrontDoor() {
@@ -21,7 +21,9 @@ public class Randomizer implements Runnable{
 		Activity activity = new Activity();	
 		try {
 			do {
-				
+				double temp = getRandomTemp(-1,30);
+				double windSpeed = getRandomWindSpeed(0,-20);
+				Boolean frontDoor = getRandomFrontDoor();
 				Thread.sleep(10000);
 			} while(true);
 		} catch(InterruptedException e) {
