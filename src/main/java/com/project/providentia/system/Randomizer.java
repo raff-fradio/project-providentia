@@ -12,9 +12,14 @@ public class Randomizer implements Runnable{
 	public Boolean getRandomFrontDoor() {
 		return (new Random().nextBoolean());
 	}
-	public void insertVar() {
-		
-		
+	public Boolean frontDoor() {
+		do {
+			int ran = 7;
+			int rand = (new Random().nextInt()*(9-0)+0);
+			if(rand==ran) {
+				return true;
+			}
+		} while(true);
 	}
 	@Override
 	public void run() {
@@ -22,8 +27,10 @@ public class Randomizer implements Runnable{
 		try {
 			do {
 				double temp = getRandomTemp(-1,30);
-				double windSpeed = getRandomWindSpeed(0,-20);
+				double windSpeed = getRandomWindSpeed(0,20);
 				Boolean frontDoor = getRandomFrontDoor();
+				
+				activity.setVariables(temp, windSpeed, frontDoor);
 				Thread.sleep(10000);
 			} while(true);
 		} catch(InterruptedException e) {
