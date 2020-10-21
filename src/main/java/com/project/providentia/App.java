@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import com.project.providentia.system.Randomizer;
+
 public class App extends Application {
 
 	@Override
@@ -21,7 +23,10 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+//        launch();
+    	Randomizer rd = new Randomizer();
+//    	Thread thread = new Thread(rd);
+//    	thread.start();
     }
 
 }
