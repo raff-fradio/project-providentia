@@ -1,21 +1,15 @@
 package com.project.providentia.system;
 
+import java.util.*;
+
 public class Randomizer {
-	private double temperature;
-	private double windSpeed;
-	private boolean frontDoor;
-	
-	public Randomizer() {
-		
+	public double getRandomTemp(double min, double max) {
+		return (new Random().nextDouble()*(max-min)+min);
 	}
-	public double getRandomTemp() {
-		
-		return temperature;
-	}
-	public double getRandomWindspeed() {
-		return windSpeed;
+	public double getRandomWindspeed(double min, double max) {
+		return (new Random().nextDouble()*(max-min)+min);
 	}
 	public Boolean getRandomFrontDoor() {
-		return frontDoor;
+		return (new Random().nextBoolean());
 	}
 }
