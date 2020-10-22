@@ -12,6 +12,7 @@ public class Control {
 		this.lights = new HashMap<String, Boolean>();
 		
 		lights.put("Bedroom", false);
+		lights.put("Bathroom", false);
 		lights.put("Kitchen", false);
 		lights.put("Living Room", false);
 	}
