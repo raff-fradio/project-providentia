@@ -4,23 +4,31 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.project.providentia.App;
+
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 
 public class MainController implements Initializable {
 	
+	@FXML private HBox topbar;
 	@FXML private ImageView background;
 	@FXML private ImageView closeBtn;
 	@FXML private StackPane closeArea;
+	
+    private double xOffSet = 0;
+    private double yOffSet = 0;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		initImages();			
+		initImages();
+		makeStageDragable();
 
 	}
 
@@ -41,5 +49,16 @@ public class MainController implements Initializable {
         Platform.exit();
 		System.exit(0);
 	}
+	
+	private void makeStageDragable() {
+        topbar.setOnMousePressed((event) -> {
+            xOffSet = event.getSceneX();
+            yOffSet = event.getSceneY();
+        });
+        topbar.setOnMouseDragged((event) -> {
+            App.stage.setX(event.getScreenX() - xOffSet);
+            App.stage.setY(event.getScreenY() - yOffSet);
+        });
+    }
 
 }

@@ -16,8 +16,12 @@ import com.project.providentia.system.Randomizer;
 
 public class App extends Application {
 
+	public static Stage stage = null;
+
 	@Override
     public void start(Stage primaryStage) throws Exception {
+		stage = primaryStage;
+		
 		Parent root = FXMLLoader.load(getClass().getResource("ui/views/Main.fxml"));
 		Scene scene = new Scene(root);
 //		scene.getStylesheets().add(getClass().getResource("ui/css/main.css").toExternalForm());
