@@ -35,8 +35,6 @@ public class Randomizer implements Runnable {
 				System.out.println(activity.getWindSpeed());
 				System.out.println(activity.getFrontDoor());
 				Thread.sleep(1000);
-				activity.setVariables(temp, windSpeed, frontDoor);
-				Thread.sleep(10000);
 			} while(true);
 		} catch(InterruptedException e) {
 			System.out.println("Error in Randomizer Thread !");

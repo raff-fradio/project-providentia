@@ -6,7 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import com.project.providentia.system.Activity;
 import com.project.providentia.system.Randomizer;
+import com.project.providentia.system.Status;
 
 public class App extends Application {
 
@@ -21,10 +23,14 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+//        launch();
+        Activity act = new Activity();
     	Randomizer rd = new Randomizer();
     	Thread thread = new Thread(rd);
     	thread.start();
+		Status st = new Status(act.getWindSpeed(),act.getTemperature());
+    	Thread thread2 = new Thread(st);
+    	thread2.start();    	
     }
 
 }

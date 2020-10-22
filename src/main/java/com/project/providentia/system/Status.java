@@ -9,13 +9,11 @@ public class Status implements Runnable {
 	private Boolean heater;
 	private double wind;
 	private double temp;
-	private double time;
 	LocalTime timeNow = LocalTime.now();
 	
-	public Status(double wind, double temp, double time) {
+	public Status(double wind, double temp) {
 		this.wind = wind;
 		this.temp = temp;
-		this.time = time;
 	}
 	
 	public Boolean getWindShield() {
@@ -62,7 +60,18 @@ public class Status implements Runnable {
 	@Override
 	public void run() {
 		try {
-			Thread.sleep(1000);
+			do {
+				setWindShield();
+				setOutdoorLight();
+				setAC();
+				setHeater();
+				
+				System.out.println(getWindShield());
+				System.out.println(getOutdoorLight());
+				System.out.println(getAC());
+				System.out.println(getHeater());
+				Thread.sleep(10000);
+			} while(true);
 		} catch(InterruptedException e) {
 			System.out.println("Error in Randomizer Thread !");
 		}
