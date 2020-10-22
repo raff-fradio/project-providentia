@@ -15,12 +15,15 @@ import javafx.stage.WindowEvent;
 import com.project.providentia.system.Activity;
 import com.project.providentia.system.Randomizer;
 import com.project.providentia.system.Status;
+import com.project.providentia.system.Updater;
 
 public class App extends Application {
 
 	public static Stage stage = null;
 	
     public static void main(String[] args) {
+    	Thread updater = new Thread(new Updater());
+    	updater.start();
     	launch();
     }
 
