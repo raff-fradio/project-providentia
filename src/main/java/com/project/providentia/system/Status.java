@@ -6,11 +6,12 @@ public class Status {
 	private boolean heater;
 	private boolean windShield;
 	private boolean outdoorLight;
+	private boolean guest;
 	
-	public boolean isAC() {
+	public boolean isAc() {
 		return ac;
 	}
-	public void setAC(boolean ac) {
+	public void setAc(boolean ac) {
 		this.ac = ac;
 	}
 	public boolean isHeater() {
@@ -31,5 +32,11 @@ public class Status {
 	public void setOutdoorLight(boolean outdoorLight) {
 		this.outdoorLight = outdoorLight;
 	}
-		
+	public boolean isGuest() {
+		return guest;
+	}
+	public void setGuest(boolean guest) {
+		this.guest = guest;
+	}
+	
 }

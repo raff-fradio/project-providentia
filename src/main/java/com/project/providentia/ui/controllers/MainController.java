@@ -111,5 +111,8 @@ public class MainController implements Initializable, Observer {
 		temperatureLabel.textProperty().set(temperature + " Celsius");
 		windSpeedLabel.textProperty().set(windSpeed + " km/h");
 	}
-
+	
+	private void checkStatus(double temperature, double windSpeed) {
+		
+	}
 }
