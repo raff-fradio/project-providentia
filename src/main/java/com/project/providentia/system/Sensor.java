@@ -2,22 +2,23 @@ package com.project.providentia.system;
 
 public class Sensor implements Runnable {
 
-	SensorData activity = new SensorData();
-	Randomizer randomizer = new Randomizer();
+	private final int DURATION = 1;
+	
+	private SensorData sensorData;
+	private Randomizer randomizer;
+	
+	public Sensor() {
+		sensorData = SensorData.getInstance();
+		randomizer = new Randomizer();
+	}
 	
 	@Override
 	public void run() {
 		while (true) {
 			try {
-//				System.out.println("Front Door Sensor: " + randomizer.getRandomFrontDoor());
-//				System.out.println("Temperature: " + randomizer.getRandomTemperature());
-//				System.out.println("Wind Speed: " + randomizer.getRandomWindSpeed());
-				
-				activity.setVariables(randomizer.getRandomTemperature(), randomizer.getRandomWindSpeed(), randomizer.getRandomFrontDoor());
-				
-				System.out.println();
-				Thread.sleep(5000);
-			} catch (InterruptedException e) {
+				sensorData.setVariables(randomizer.getRandomTemperature(), randomizer.getRandomWindSpeed(), randomizer.getRandomFrontDoor());
+				Thread.sleep(DURATION * 1000);
+			} catch (InterruptedException e) {	
 				e.printStackTrace();
 			}
 		}

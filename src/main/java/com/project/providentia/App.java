@@ -4,10 +4,8 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
@@ -22,8 +20,6 @@ public class App extends Application {
 	public static Stage stage = null;
 	
     public static void main(String[] args) {
-    	Thread updater = new Thread(new Sensor());
-    	updater.start();
     	launch();
     }
 
@@ -46,6 +42,9 @@ public class App extends Application {
 		});
 		
 		primaryStage.show();
+		
+    	Thread sensor = new Thread(new Sensor());
+    	sensor.start();
     }
 
 

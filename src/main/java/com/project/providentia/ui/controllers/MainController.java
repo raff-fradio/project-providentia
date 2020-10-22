@@ -2,11 +2,19 @@ package com.project.providentia.ui.controllers;
 
 import java.io.File;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 import com.project.providentia.App;
+import com.project.providentia.system.Sensor;
+import com.project.providentia.system.SensorData;
 import com.project.providentia.system.observer.Observer;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,6 +23,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 public class MainController implements Initializable, Observer {
 	
@@ -23,19 +32,34 @@ public class MainController implements Initializable, Observer {
 	@FXML private ImageView closeBtn;
 	@FXML private StackPane closeArea;
 	
-	@FXML private Text clock;
-	@FXML private Text temperature;
-	@FXML private Text windSpeed;
+	@FXML private Text dateLabel;
+	@FXML private Text clockLabel;
+	@FXML private Text temperatureLabel;
+	@FXML private Text windSpeedLabel;
 	
     private double xOffSet = 0;
     private double yOffSet = 0;
+    
+    private SensorData sensorData;
+    
+    private DateTimeFormatter dateFormat;
+    private DateTimeFormatter clockFormat;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
+		clockFormat = DateTimeFormatter.ofPattern("hh:mm a");
+		dateFormat = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy");
+		
+		
+		sensorData = SensorData.getInstance();
+		sensorData.registerObserver(this);
+		
 		initImages();
 		makeStageDragable();
 
+		startClock();
+		
 	}
 
 	private void initImages() {
@@ -66,10 +90,26 @@ public class MainController implements Initializable, Observer {
             App.stage.setY(event.getScreenY() - yOffSet);
         });
     }
+	
+	private void startClock() {
+		Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {        
+			LocalDate currentDate = LocalDate.now();
+	        LocalTime currentTime = LocalTime.now();
+	        
+	        dateLabel.setText(currentDate.format(dateFormat));
+	        clockLabel.setText(currentTime.format(clockFormat));
+	        
+	    }),
+	         new KeyFrame(Duration.seconds(1))
+	    );
+	    clock.setCycleCount(Animation.INDEFINITE);
+	    clock.play();
+	}
 
 	@Override
 	public void updateActivity(double temperature, double windSpeed, boolean frontDoor) {
-		
+		temperatureLabel.textProperty().set(temperature + " Celsius");
+		windSpeedLabel.textProperty().set(windSpeed + " km/h");
 	}
 
 }

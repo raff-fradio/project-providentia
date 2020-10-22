@@ -7,14 +7,26 @@ import com.project.providentia.system.observer.Subject;
 
 public class SensorData implements Subject {
 	
+	private volatile static SensorData instance;
+	
 	private ArrayList<Observer> observers;
+	
 	
 	private double temperature;
 	private double windSpeed;
 	private boolean frontDoor;
 	
-	public SensorData() {
+	private SensorData() {
 		this.observers = new ArrayList<Observer>();
+	}
+	
+	public static SensorData getInstance() {
+		if (instance == null) {
+			synchronized (SensorData.class) {
+				if (instance == null) instance = new SensorData();
+			}
+		}
+		return instance;
 	}
 
 	@Override
