@@ -30,13 +30,17 @@ public class MainController implements Initializable, Observer {
 	@FXML private HBox topbar;
 	@FXML private ImageView background;
 	@FXML private ImageView closeBtn;
-	@FXML private ImageView ac;
 	@FXML private StackPane closeArea;	
 	
 	@FXML private Text dateLabel;
 	@FXML private Text clockLabel;
 	@FXML private Text temperatureLabel;
 	@FXML private Text windSpeedLabel;
+	
+	@FXML private ImageView ac;
+	@FXML private ImageView light;
+	@FXML private ImageView heater;
+	@FXML private ImageView frontDoor;
 	
     private double xOffSet = 0;
     private double yOffSet = 0;
@@ -80,10 +84,15 @@ public class MainController implements Initializable, Observer {
 		
 		ac.setImage(acImage);	
 		
-		String lightPath = new File("src/main/resources/com/project/providentia/ac2.png").getAbsolutePath();
+		String lightPath = new File("src/main/resources/com/project/providentia/light.png").getAbsolutePath();
 		Image lightImage = new Image(new File(lightPath).toURI().toString());
 		
-		ac.setImage(lightImage);	
+		light.setImage(lightImage);	
+		
+		String heaterPath = new File("src/main/resources/com/project/providentia/light.png").getAbsolutePath();
+		Image heaterImage = new Image(new File(lightPath).toURI().toString());
+		
+		heater.setImage(heaterImage);	
 	}
 	
 	@FXML

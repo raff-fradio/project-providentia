@@ -2,11 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -132,22 +129,28 @@
                                                 <Font name="System Bold" size="24.0" />
                                              </font>
                                           </Text>
-                                          <GridPane>
-                                            <columnConstraints>
-                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                            </columnConstraints>
-                                            <rowConstraints>
-                                              <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="500.0" vgrow="ALWAYS" />
-                                              <RowConstraints minHeight="10.0" prefHeight="500.0" vgrow="SOMETIMES" />
-                                            </rowConstraints>
+                                          <HBox prefHeight="100.0" prefWidth="100">
                                              <children>
-                                                <ImageView fx:id="ac" fitHeight="200" fitWidth="200" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="ac" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
 					                      		</ImageView>
-					                      		<ImageView fx:id="ac" fitHeight="200" fitWidth="200" pickOnBounds="true" preserveRatio="true">
+      					                      	<ImageView fx:id="light" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
 					                      		</ImageView>
                                              </children>
-                                          </GridPane>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="100">
+                                          <children>
+                                                <ImageView fx:id="ac" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
+					                      		</ImageView>
+      					                      	<ImageView fx:id="light" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
+					                      		</ImageView>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="100" >
+                                          <children>
+                                                <ImageView fx:id="ac" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
+					                      		</ImageView>
+                                             </children>
+                                          </HBox>
                                        </children>
                                        <padding>
                                           <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
