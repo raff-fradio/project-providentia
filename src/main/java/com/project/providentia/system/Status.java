@@ -2,6 +2,8 @@ package com.project.providentia.system;
 
 public class Status {
 	
+	public static final int SAFE_WIND_SPEED = 60;
+	
 	private boolean ac;
 	private boolean heater;
 	private boolean windShield;

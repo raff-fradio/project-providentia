@@ -11,8 +11,7 @@ public class Control {
 		this.temperature = 20;
 		this.lights = new HashMap<String, Boolean>();
 		
-		lights.put("Bedroom 1", false);
-		lights.put("Bedroom 2", false);
+		lights.put("Bedroom", false);
 		lights.put("Kitchen", false);
 		lights.put("Living Room", false);
 	}

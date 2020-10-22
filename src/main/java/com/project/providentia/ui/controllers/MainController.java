@@ -8,6 +8,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 import com.project.providentia.App;
+import com.project.providentia.system.Control;
 import com.project.providentia.system.SensorData;
 import com.project.providentia.system.Status;
 import com.project.providentia.system.observer.Observer;
@@ -54,6 +55,7 @@ public class MainController implements Initializable, Observer {
     
     private SensorData sensorData;
     private Status status;
+    private Control control;
     
     private DateTimeFormatter dateFormat;
     private DateTimeFormatter clockFormat;
@@ -68,6 +70,7 @@ public class MainController implements Initializable, Observer {
 		sensorData = SensorData.getInstance();
 		sensorData.registerObserver(this);
 		status = new Status();
+		control = new Control();
 		
 		initImages();
 		makeStageDragable();
@@ -171,11 +174,33 @@ public class MainController implements Initializable, Observer {
 
 	@Override
 	public void updateActivity(double temperature, double windSpeed, boolean frontDoor) {
-		temperatureLabel.textProperty().set(temperature + " Celsius");
-		windSpeedLabel.textProperty().set(windSpeed + " km/h");
-	}
-	
-	private void checkStatus(double temperature, double windSpeed) {
+		temperatureLabel.setText(temperature + " \u00B0C");
+		windSpeedLabel.setText(windSpeed + " km/h");
+		if (control.getTemperature() < temperature) {
+			System.out.println("AC turned off, Heater turned on");
+			ac.setOpacity(0.5);			
+			heater.setOpacity(1);			
+		} else {
+			System.out.println("Heater turned off, AC turned on");
+			heater.setOpacity(0.5);	
+			ac.setOpacity(1);
+		}
 		
+		if (windSpeed > Status.SAFE_WIND_SPEED) {
+			System.out.println("Wind shield engaged");
+			window.setOpacity(1);	
+		} else {
+			System.out.println("Wind shield disabled");
+			window.setOpacity(0.5);			
+		}
+		
+		if (frontDoor) {
+			System.out.println("Alert! Guest on front door!");
+			cctv.setOpacity(0.5);
+		} else {
+			cctv.setOpacity(1);
+		}
+		
+		System.out.println();
 	}
 }
