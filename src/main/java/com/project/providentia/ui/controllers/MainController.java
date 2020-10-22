@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.project.providentia.App;
+import com.project.providentia.system.observer.Observer;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -14,7 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 
-public class MainController implements Initializable {
+public class MainController implements Initializable, Observer {
 	
 	@FXML private HBox topbar;
 	@FXML private ImageView background;
@@ -60,5 +61,11 @@ public class MainController implements Initializable {
             App.stage.setY(event.getScreenY() - yOffSet);
         });
     }
+
+	@Override
+	public void updateActivity(double temperature, double windSpeed, boolean frontDoor) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
