@@ -35,7 +35,7 @@ public class Randomizer implements Runnable {
 				Thread.sleep(1000);
 			} while(true);
 		} catch(InterruptedException e) {
-			System.out.println("Error !");
+			System.out.println("Error in Randomizer Thread !");
 		}
 	}
 }
