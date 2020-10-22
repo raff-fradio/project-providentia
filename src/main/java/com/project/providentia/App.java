@@ -42,11 +42,11 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-      Activity act = new Activity();
+    	Activity act = new Activity();
     	Randomizer rd = new Randomizer();
     	Thread thread = new Thread(rd);
     	thread.start();
-		  Status st = new Status(act.getWindSpeed(),act.getTemperature());
+		Status st = new Status(act.getWindSpeed(),act.getTemperature());
     	Thread thread2 = new Thread(st);
     	thread2.start();    	
 
