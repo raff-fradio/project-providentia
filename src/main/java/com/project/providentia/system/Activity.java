@@ -58,7 +58,7 @@ public class Activity implements Subject {
 		this.windSpeed = windSpeed;
 	}
 
-	public boolean isFrontDoor() {
+	public boolean getFrontDoor() {
 		return frontDoor;
 	}
 

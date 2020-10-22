@@ -5,4 +5,7 @@ module com.project.providentia {
 
     opens com.project.providentia to javafx.fxml;
     exports com.project.providentia;
+    
+    opens com.project.providentia.ui.controllers to javafx.fxml;
+    exports com.project.providentia.ui.controllers;
 }
