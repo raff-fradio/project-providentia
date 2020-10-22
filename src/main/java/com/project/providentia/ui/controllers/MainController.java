@@ -8,8 +8,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 import com.project.providentia.App;
-import com.project.providentia.system.Sensor;
 import com.project.providentia.system.SensorData;
+import com.project.providentia.system.Status;
 import com.project.providentia.system.observer.Observer;
 
 import javafx.animation.Animation;
@@ -41,6 +41,7 @@ public class MainController implements Initializable, Observer {
     private double yOffSet = 0;
     
     private SensorData sensorData;
+    private Status status;
     
     private DateTimeFormatter dateFormat;
     private DateTimeFormatter clockFormat;
@@ -59,7 +60,6 @@ public class MainController implements Initializable, Observer {
 		makeStageDragable();
 
 		startClock();
-		
 	}
 
 	private void initImages() {
