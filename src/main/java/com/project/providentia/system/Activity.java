@@ -31,7 +31,7 @@ public class Activity implements Subject {
 	@Override
 	public void notifyObservers() {
 		for (Observer o : observers) {
-			o.update(temperature, windSpeed, frontDoor);
+			o.updateActivity(temperature, windSpeed, frontDoor);
 		}
 	}
 	
