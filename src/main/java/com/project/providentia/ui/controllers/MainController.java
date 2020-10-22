@@ -46,9 +46,19 @@ public class MainController implements Initializable, Observer {
 	
 	@FXML private ImageView buttonUp;
 	@FXML private ImageView buttonDown;
-	@FXML private ImageView toggleOff;
-	@FXML private ImageView toggleOn;
+	@FXML private ImageView toggleOff1;
+	@FXML private ImageView toggleOff2;
+	@FXML private ImageView toggleOff3;
+	@FXML private ImageView toggleOff4;
+	@FXML private ImageView toggleOn1;
+	@FXML private ImageView toggleOn2;
+	@FXML private ImageView toggleOn3;
+	@FXML private ImageView toggleOn4;
 	@FXML private ImageView temp;
+	@FXML private ImageView domeLight1;
+	@FXML private ImageView domeLight2;
+	@FXML private ImageView domeLight3;
+	@FXML private ImageView domeLight4;
 	
     private double xOffSet = 0;
     private double yOffSet = 0;
@@ -127,17 +137,27 @@ public class MainController implements Initializable, Observer {
 		String toggleOffPath = new File("src/main/resources/com/project/providentia/toggle_off.png").getAbsolutePath();
 		Image toggleOffImage = new Image(new File(toggleOffPath).toURI().toString());
 		
-		toggleOff.setImage(toggleOffImage);
+		toggleOff1.setImage(toggleOffImage);
+		toggleOff2.setImage(toggleOffImage);
+		toggleOff3.setImage(toggleOffImage);
+		toggleOff4.setImage(toggleOffImage);
 		
 		String toggleOnPath = new File("src/main/resources/com/project/providentia/toggle_on.png").getAbsolutePath();
 		Image toggleOnImage = new Image(new File(toggleOnPath).toURI().toString());
 		
-		toggleOn.setImage(toggleOnImage);
 		
 		String tempPath = new File("src/main/resources/com/project/providentia/temp.png").getAbsolutePath();
 		Image tempImage = new Image(new File(tempPath).toURI().toString());
 		
 		temp.setImage(tempImage);
+		
+		String domeLightPath = new File("src/main/resources/com/project/providentia/dome_light.png").getAbsolutePath();
+		Image domeLightImage = new Image(new File(domeLightPath).toURI().toString());
+		
+		domeLight1.setImage(domeLightImage);
+		domeLight2.setImage(domeLightImage);
+		domeLight3.setImage(domeLightImage);
+		domeLight4.setImage(domeLightImage);
 	}
 	
 	@FXML
