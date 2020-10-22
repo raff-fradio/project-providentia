@@ -283,7 +283,7 @@
                               <HBox prefHeight="100.0" prefWidth="200.0">
 	                              <HBox prefHeight="100.0" prefWidth="200.0">
                                     <children>
-                                    <ImageView fx:id="domeLight1" fitHeight="80" fitWidth="80" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" translateX="75.0" translateY="35.0">
+                                    <ImageView fx:id="domeLightBed" fitHeight="80" fitWidth="80" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" translateX="75.0" translateY="35.0">
 								  	</ImageView>
                                        <Label text="Bedroom" textFill="WHITE" translateX="-65.0" translateY="8.0">
                                           <font>
@@ -292,12 +292,13 @@
                                        </Label>
                                     </children>
                                  </HBox>
+                                 <ImageView fx:id="switchBed" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true" translateX="65.0" translateY="40.0" />
 							  </HBox>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="domeLight2" fitHeight="80" fitWidth="80" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" translateX="75.0" translateY="35.0" />
+                                          <ImageView fx:id="domeLightBath" fitHeight="80" fitWidth="80" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" translateX="75.0" translateY="35.0" />
                                           <Label text="Bathroom" textFill="WHITE" translateX="-65.0" translateY="8.0">
                                              <font>
                                                 <Font name="System Bold" size="18.0" />
@@ -305,14 +306,14 @@
                                           </Label>
                                        </children>
                                     </HBox>
-                                    <ImageView fx:id="toggleOff" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true" translateX="65.0" translateY="45.0" />
+                                    <ImageView fx:id="switchBath" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true" translateX="65.0" translateY="45.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="domeLight3" fitHeight="80" fitWidth="80" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" translateX="75.0" translateY="35.0" />
+                                          <ImageView fx:id="domeLightKitchen" fitHeight="80" fitWidth="80" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" translateX="75.0" translateY="35.0" />
                                           <Label text="Kitchen" textFill="WHITE" translateX="-65.0" translateY="8.0">
                                              <font>
                                                 <Font name="System Bold" size="18.0" />
@@ -320,13 +321,14 @@
                                           </Label>
                                        </children>
                                     </HBox>
+                                    <ImageView fx:id="switchKitchen" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true" translateX="65.0" translateY="45.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="domeLight4" fitHeight="80" fitWidth="80" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" translateX="75.0" translateY="35.0" />
+                                          <ImageView fx:id="domeLightLiving" fitHeight="80" fitWidth="80" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" translateX="75.0" translateY="35.0" />
                                           <Label text="Living Room" textFill="WHITE" translateX="-65.0" translateY="8.0">
                                              <font>
                                                 <Font name="System Bold" size="18.0" />
@@ -334,7 +336,7 @@
                                           </Label>
                                        </children>
                                     </HBox>
-                                    <ImageView fx:id="toggleOff4" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true" translateX="65.0" translateY="45.0" />
+                                    <ImageView fx:id="switchLiving" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true" translateX="65.0" translateY="45.0" />
                                  </children>
                               </HBox>
                            </children>

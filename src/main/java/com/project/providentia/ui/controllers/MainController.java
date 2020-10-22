@@ -46,19 +46,15 @@ public class MainController implements Initializable, Observer {
 	
 	@FXML private ImageView buttonUp;
 	@FXML private ImageView buttonDown;
-	@FXML private ImageView toggleOff1;
-	@FXML private ImageView toggleOff2;
-	@FXML private ImageView toggleOff3;
-	@FXML private ImageView toggleOff4;
-	@FXML private ImageView toggleOn1;
-	@FXML private ImageView toggleOn2;
-	@FXML private ImageView toggleOn3;
-	@FXML private ImageView toggleOn4;
+	@FXML private ImageView switchBed;
+	@FXML private ImageView switchBath;
+	@FXML private ImageView switchKitchen;
+	@FXML private ImageView switchLiving;
 	@FXML private ImageView temp;
-	@FXML private ImageView domeLight1;
-	@FXML private ImageView domeLight2;
-	@FXML private ImageView domeLight3;
-	@FXML private ImageView domeLight4;
+	@FXML private ImageView domeLightBed;
+	@FXML private ImageView domeLightBath;
+	@FXML private ImageView domeLightKitchen;
+	@FXML private ImageView domeLightLiving;
 	
     private double xOffSet = 0;
     private double yOffSet = 0;
@@ -134,13 +130,17 @@ public class MainController implements Initializable, Observer {
 		
 		buttonDown.setImage(buttonDownImage);
 		
-		String toggleOffPath = new File("src/main/resources/com/project/providentia/toggle_off.png").getAbsolutePath();
-		Image toggleOffImage = new Image(new File(toggleOffPath).toURI().toString());
+		String switchPath = new File("src/main/resources/com/project/providentia/toggle_off.png").getAbsolutePath();
+		Image switchBedImage = new Image(new File(switchPath).toURI().toString());
+		Image switchBathImage = new Image(new File(switchPath).toURI().toString());
+		Image switchKitchenImage = new Image(new File(switchPath).toURI().toString());
+		Image switchLivingImage = new Image(new File(switchPath).toURI().toString());
 		
-		toggleOff1.setImage(toggleOffImage);
-		toggleOff2.setImage(toggleOffImage);
-		toggleOff3.setImage(toggleOffImage);
-		toggleOff4.setImage(toggleOffImage);
+		
+		switchBed.setImage(switchBedImage);
+		switchBath.setImage(switchBathImage);
+		switchKitchen.setImage(switchKitchenImage);
+		switchLiving.setImage(switchLivingImage);
 		
 		String toggleOnPath = new File("src/main/resources/com/project/providentia/toggle_on.png").getAbsolutePath();
 		Image toggleOnImage = new Image(new File(toggleOnPath).toURI().toString());
@@ -152,12 +152,15 @@ public class MainController implements Initializable, Observer {
 		temp.setImage(tempImage);
 		
 		String domeLightPath = new File("src/main/resources/com/project/providentia/dome_light.png").getAbsolutePath();
-		Image domeLightImage = new Image(new File(domeLightPath).toURI().toString());
+		Image domeLightBedImage = new Image(new File(domeLightPath).toURI().toString());
+		Image domeLightBathImage = new Image(new File(domeLightPath).toURI().toString());
+		Image domeLightKitchenImage = new Image(new File(domeLightPath).toURI().toString());
+		Image domeLightLivingImage = new Image(new File(domeLightPath).toURI().toString());
 		
-		domeLight1.setImage(domeLightImage);
-		domeLight2.setImage(domeLightImage);
-		domeLight3.setImage(domeLightImage);
-		domeLight4.setImage(domeLightImage);
+		domeLightBed.setImage(domeLightBedImage);
+		domeLightBath.setImage(domeLightBathImage);
+		domeLightKitchen.setImage(domeLightKitchenImage);
+		domeLightLiving.setImage(domeLightLivingImage);
 	}
 	
 	@FXML
