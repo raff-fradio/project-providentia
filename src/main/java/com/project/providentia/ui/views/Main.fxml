@@ -249,20 +249,15 @@
                                  </ImageView>
                                  <HBox alignment="CENTER_RIGHT" prefHeight="101.0" prefWidth="174.0">
                                     <children>
-                                       <GridPane prefHeight="100.0" prefWidth="300.0">
+                                       <GridPane>
                                          <columnConstraints>
                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
-                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
                                          </columnConstraints>
                                          <rowConstraints>
                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                          </rowConstraints>
                                           <children>
-            	                              <ImageView fx:id="buttonUp" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
-								  </ImageView>
-            								  <ImageView fx:id="buttonDown" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER">
-								  </ImageView>
                                              <Label fx:id="tempValue" alignment="CENTER" contentDisplay="CENTER" text="20 C" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                                                 <GridPane.margin>
                                                    <Insets />
@@ -271,6 +266,20 @@
                                                    <Font name="System Bold" size="32.0" />
                                                 </font>
                                              </Label>
+                                             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                <children>
+                  	                              <ImageView fx:id="buttonUp" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                      <VBox.margin>
+                                                         <Insets bottom="5.0" top="5.0" />
+                                                      </VBox.margin>
+                                                   </ImageView>
+                  								  <ImageView fx:id="buttonDown" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                      <VBox.margin>
+                                                         <Insets bottom="5.0" top="5.0" />
+                                                      </VBox.margin>
+                                                   </ImageView>
+                                                </children>
+                                             </VBox>
                                           </children>
                                        </GridPane>
                                     </children>
