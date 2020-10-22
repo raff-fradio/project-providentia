@@ -1,6 +1,6 @@
 package com.project.providentia.system;
 
-import java.util.*;
+import java.util.Random;
 
 public class Randomizer implements Runnable {
 	public double getRandomTemp(double min, double max) {
