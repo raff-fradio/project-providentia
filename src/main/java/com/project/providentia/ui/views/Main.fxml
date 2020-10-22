@@ -149,12 +149,10 @@
                                           </HBox>
                                           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                           <children>
-<<<<<<< Updated upstream
                                                 <ImageView fx:id="heater" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
 					                      		</ImageView>
       					                      	<ImageView fx:id="cctv" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
 					                      		</ImageView>
-=======
                                                 <ImageView fx:id="heater" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                                    <HBox.margin>
                                                       <Insets right="10.0" />
@@ -163,7 +161,6 @@
                                                    <HBox.margin>
                                                       <Insets left="10.0" />
                                                    </HBox.margin></ImageView>
->>>>>>> Stashed changes
                                              </children>
                                              <opaqueInsets>
                                                 <Insets />
@@ -174,12 +171,8 @@
                                           </HBox>
                                           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                           <children>
-<<<<<<< Updated upstream
                                                 <ImageView fx:id="window" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
-=======
-                                                <ImageView fx:id="window" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
->>>>>>> Stashed changes
-					                      		</ImageView>
+                                                </ImageView>
                                              </children>
                                              <opaqueInsets>
                                                 <Insets />
