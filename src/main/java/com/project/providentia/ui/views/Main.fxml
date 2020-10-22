@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -26,9 +28,6 @@
                   <StackPane onMouseReleased="#exit" prefHeight="30.0" prefWidth="50.0">
                      <children>
                         <ImageView fx:id="closeBtn" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../resources/com/project/providentia/close-icon.png" />
-                           </image>
                         </ImageView>
                      </children>
                   </StackPane>
@@ -133,6 +132,22 @@
                                                 <Font name="System Bold" size="24.0" />
                                              </font>
                                           </Text>
+                                          <GridPane>
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="500.0" vgrow="ALWAYS" />
+                                              <RowConstraints minHeight="10.0" prefHeight="500.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <ImageView fx:id="ac" fitHeight="200" fitWidth="200" pickOnBounds="true" preserveRatio="true">
+					                      		</ImageView>
+					                      		<ImageView fx:id="ac" fitHeight="200" fitWidth="200" pickOnBounds="true" preserveRatio="true">
+					                      		</ImageView>
+                                             </children>
+                                          </GridPane>
                                        </children>
                                        <padding>
                                           <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -176,6 +191,18 @@
                      </HBox.margin>
                      <children>
                         <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222; -fx-opacity: 75%; -fx-background-radius: 10;" />
+                        <VBox alignment="TOP_CENTER">
+                           <children>
+                              <Text fx:id="clock12" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Controls">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </VBox>
                      </children>
                   </StackPane>
                </children>

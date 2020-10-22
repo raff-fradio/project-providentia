@@ -30,7 +30,8 @@ public class MainController implements Initializable, Observer {
 	@FXML private HBox topbar;
 	@FXML private ImageView background;
 	@FXML private ImageView closeBtn;
-	@FXML private StackPane closeArea;
+	@FXML private ImageView ac;
+	@FXML private StackPane closeArea;	
 	
 	@FXML private Text dateLabel;
 	@FXML private Text clockLabel;
@@ -73,6 +74,16 @@ public class MainController implements Initializable, Observer {
 		Image closeBtnImage = new Image(new File(closeBtnPath).toURI().toString());
 		
 		closeBtn.setImage(closeBtnImage);		
+		
+		String acPath = new File("src/main/resources/com/project/providentia/ac2.png").getAbsolutePath();
+		Image acImage = new Image(new File(acPath).toURI().toString());
+		
+		ac.setImage(acImage);	
+		
+		String lightPath = new File("src/main/resources/com/project/providentia/ac2.png").getAbsolutePath();
+		Image lightImage = new Image(new File(lightPath).toURI().toString());
+		
+		ac.setImage(lightImage);	
 	}
 	
 	@FXML
