@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.project.providentia.system.observer.Observer;
 import com.project.providentia.system.observer.Subject;
 
-public class Activity implements Subject {
+public class SensorData implements Subject {
 	
 	private ArrayList<Observer> observers;
 	
@@ -13,7 +13,7 @@ public class Activity implements Subject {
 	private double windSpeed;
 	private boolean frontDoor;
 	
-	public Activity() {
+	public SensorData() {
 		this.observers = new ArrayList<Observer>();
 	}
 

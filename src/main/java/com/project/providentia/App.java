@@ -12,17 +12,17 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
-import com.project.providentia.system.Activity;
+import com.project.providentia.system.SensorData;
 import com.project.providentia.system.Randomizer;
 import com.project.providentia.system.Status;
-import com.project.providentia.system.Updater;
+import com.project.providentia.system.Sensor;
 
 public class App extends Application {
 
 	public static Stage stage = null;
 	
     public static void main(String[] args) {
-    	Thread updater = new Thread(new Updater());
+    	Thread updater = new Thread(new Sensor());
     	updater.start();
     	launch();
     }

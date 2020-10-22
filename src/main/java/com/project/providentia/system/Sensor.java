@@ -1,8 +1,8 @@
 package com.project.providentia.system;
 
-public class Updater implements Runnable {
+public class Sensor implements Runnable {
 
-	Activity activity = new Activity();
+	SensorData activity = new SensorData();
 	Randomizer randomizer = new Randomizer();
 	
 	@Override
