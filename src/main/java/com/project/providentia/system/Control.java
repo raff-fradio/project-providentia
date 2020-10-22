@@ -1,8 +1,9 @@
 package com.project.providentia.system;
 public class Control {
 	double temp;
-	Boolean light;
+	Boolean roomLight;
 	Boolean blind;
+//	ArrayList<Light> light = new ArrayList<Light>();
 	public double getTemp() {
 		return temp;
 	}
@@ -10,10 +11,13 @@ public class Control {
 		this.temp = temp;
 	}
 	public Boolean getLight() {
-		return light;
+		return roomLight;
 	}
 	public void setLight(Boolean light) {
-		this.light = light;
+		this.roomLight = light;
+	}
+	public void checkLight() {
+		System.out.println("Light is On !");
 	}
 	public Boolean getBlind() {
 		return blind;
