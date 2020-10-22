@@ -14,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 
 public class MainController implements Initializable, Observer {
 	
@@ -21,6 +22,10 @@ public class MainController implements Initializable, Observer {
 	@FXML private ImageView background;
 	@FXML private ImageView closeBtn;
 	@FXML private StackPane closeArea;
+	
+	@FXML private Text clock;
+	@FXML private Text temperature;
+	@FXML private Text windSpeed;
 	
     private double xOffSet = 0;
     private double yOffSet = 0;
@@ -64,7 +69,6 @@ public class MainController implements Initializable, Observer {
 
 	@Override
 	public void updateActivity(double temperature, double windSpeed, boolean frontDoor) {
-		// TODO Auto-generated method stub
 		
 	}
 
