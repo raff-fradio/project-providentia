@@ -129,25 +129,25 @@
                                                 <Font name="System Bold" size="24.0" />
                                              </font>
                                           </Text>
-                                          <HBox prefHeight="100.0" prefWidth="100">
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
                                              <children>
-                                                <ImageView fx:id="ac" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="ac" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
 					                      		</ImageView>
-      					                      	<ImageView fx:id="light" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
-					                      		</ImageView>
-                                             </children>
-                                          </HBox>
-                                          <HBox prefHeight="100.0" prefWidth="100">
-                                          <children>
-                                                <ImageView fx:id="ac" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
-					                      		</ImageView>
-      					                      	<ImageView fx:id="light" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
+      					                      	<ImageView fx:id="light" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
 					                      		</ImageView>
                                              </children>
                                           </HBox>
-                                          <HBox prefHeight="100.0" prefWidth="100" >
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
                                           <children>
-                                                <ImageView fx:id="ac" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="heater" fitHeight="200" fitWidth="200" pickOnBounds="true" preserveRatio="true">
+					                      		</ImageView>
+      					                      	<ImageView fx:id="cctv" fitHeight="200" fitWidth="200" pickOnBounds="true" preserveRatio="true">
+					                      		</ImageView>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                                <ImageView fx:id="window" fitHeight="200" fitWidth="200" pickOnBounds="true" preserveRatio="true">
 					                      		</ImageView>
                                              </children>
                                           </HBox>

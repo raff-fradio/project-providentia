@@ -40,7 +40,13 @@ public class MainController implements Initializable, Observer {
 	@FXML private ImageView ac;
 	@FXML private ImageView light;
 	@FXML private ImageView heater;
-	@FXML private ImageView frontDoor;
+	@FXML private ImageView cctv;
+	@FXML private ImageView window;
+	
+	@FXML private ImageView buttonUp;
+	@FXML private ImageView buttonDown;
+	@FXML private ImageView toggleOff;
+	@FXML private ImageView toggleOn;
 	
     private double xOffSet = 0;
     private double yOffSet = 0;
@@ -89,10 +95,40 @@ public class MainController implements Initializable, Observer {
 		
 		light.setImage(lightImage);	
 		
-		String heaterPath = new File("src/main/resources/com/project/providentia/light.png").getAbsolutePath();
-		Image heaterImage = new Image(new File(lightPath).toURI().toString());
+		String heaterPath = new File("src/main/resources/com/project/providentia/heater.png").getAbsolutePath();
+		Image heaterImage = new Image(new File(heaterPath).toURI().toString());
 		
 		heater.setImage(heaterImage);	
+		
+		String cctvPath = new File("src/main/resources/com/project/providentia/cctv.png").getAbsolutePath();
+		Image cctvImage = new Image(new File(cctvPath).toURI().toString());
+		
+		cctv.setImage(cctvImage);
+		
+		String windowPath = new File("src/main/resources/com/project/providentia/window.png").getAbsolutePath();
+		Image windowImage = new Image(new File(windowPath).toURI().toString());
+		
+		window.setImage(windowImage);
+		
+		String buttonUpPath = new File("src/main/resources/com/project/providentia/button_up.png").getAbsolutePath();
+		Image buttonUpImage = new Image(new File(buttonUpPath).toURI().toString());
+		
+		buttonUp.setImage(buttonUpImage);
+		
+		String buttonDownPath = new File("src/main/resources/com/project/providentia/button_down.png").getAbsolutePath();
+		Image buttonDownImage = new Image(new File(buttonDownPath).toURI().toString());
+		
+		buttonDown.setImage(buttonDownImage);
+		
+		String toggleOffPath = new File("src/main/resources/com/project/providentia/toggle_off.png").getAbsolutePath();
+		Image toggleOffImage = new Image(new File(toggleOffPath).toURI().toString());
+		
+		toggleOff.setImage(toggleOffImage);
+		
+		String toggleOnPath = new File("src/main/resources/com/project/providentia/toggle_on.png").getAbsolutePath();
+		Image toggleOnImage = new Image(new File(toggleOnPath).toURI().toString());
+		
+		toggleOn.setImage(toggleOnImage);
 	}
 	
 	@FXML
