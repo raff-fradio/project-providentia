@@ -4,11 +4,11 @@ import java.util.Random;
 
 public class Randomizer {
 	
-	private final double MIN_TEMP = -10;
+	private final double MIN_TEMP = -1;
 	private final double MAX_TEMP = 40;
 	private final double MIN_WIND_SPEED = 0;
 	private final double MAX_WIND_SPEED = 370;
-	private final double GUEST_CHANCE = 0.2;
+	private final double GUEST_CHANCE = 0.1;
 	
 	private final int DECIMAL_PLACE = 2;
 		
