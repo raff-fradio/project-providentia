@@ -3,12 +3,17 @@ package com.project.providentia.system;
 import java.time.LocalTime;
 
 public class Status implements Runnable {
-	private Boolean windShield;
-	private Boolean outdoorLight;
-	private Boolean AC;
-	private Boolean heater;
+	private boolean windShield;
+	private boolean outdoorLight;
+	private boolean AC;
+	private boolean heater;
 	private double wind;
 	private double temp;
+	private final LocalTime MORNING = LocalTime.parse("06:00:00");
+	private final LocalTime EVENING = LocalTime.parse("18:00:00");
+	private final double MAX_WIND_SPEED = 80;
+	private final double HIGH_TEMP = 26;
+	private final double LOW_TEMP = 18;
 	LocalTime timeNow = LocalTime.now();
 	
 	public Status(double wind, double temp) {
@@ -20,38 +25,36 @@ public class Status implements Runnable {
 		return windShield;
 	}
 	public void setWindShield() {
-		if(wind >= 80) {
+		if(wind >= MAX_WIND_SPEED) {
 			this.windShield = true;
 		} 
 		this.windShield = false;
 	}
-	public Boolean getOutdoorLight() {
+	public boolean getOutdoorLight() {
 		return outdoorLight;
 	}
 	public void setOutdoorLight() {
-		LocalTime morning = LocalTime.parse("06:00:00");
-		LocalTime evening = LocalTime.parse("18:00:00");
-		if(timeNow.isBefore(evening) && timeNow.isAfter(morning)) {
+		if(timeNow.isBefore(EVENING) && timeNow.isAfter(MORNING)) {
 			outdoorLight = false;
 		} else {
 			outdoorLight = true;
 		}
 	}
-	public Boolean getAC() {
+	public boolean getAC() {
 		return AC;
 	}
 	public void setAC() {
-		if(this.temp >= 26) {
+		if(this.temp >= HIGH_TEMP) {
 			AC = true;
 		} else {
 			AC = false;
 		}
 	}
-	public Boolean getHeater() {
+	public boolean getHeater() {
 		return heater;
 	}
 	public void setHeater() {
-		if(this.temp <= 18) {
+		if(this.temp <= LOW_TEMP) {
 			heater = true;
 		} else {
 			heater = false;
