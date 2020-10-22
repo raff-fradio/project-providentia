@@ -2,8 +2,11 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -231,21 +234,40 @@
                                     <Font name="System Bold" size="24.0" />
                                  </font>
                               </Text>
-                              <HBox prefHeight="100.0" prefWidth="200.0" >
-	                              <ImageView fx:id="temp" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <HBox alignment="CENTER" prefHeight="101.0" prefWidth="186.0">
+                                    <children>
+      	                              <ImageView fx:id="temp" fitHeight="101.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
 								  </ImageView>
-	                              <ImageView fx:id="buttonUp" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true">
+                                    </children>
+                                 </HBox>
+                                 <HBox alignment="CENTER_RIGHT" prefHeight="101.0" prefWidth="174.0">
+                                    <children>
+                                       <GridPane prefHeight="101.0" prefWidth="181.0">
+                                         <columnConstraints>
+                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                         </columnConstraints>
+                                         <rowConstraints>
+                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                         </rowConstraints>
+                                          <children>
+            	                              <ImageView fx:id="buttonUp" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true">
 								  </ImageView>
-								  <ImageView fx:id="buttonDown" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true">
+            								  <ImageView fx:id="buttonDown" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
 								  </ImageView>
+                                          </children>
+                                       </GridPane>
+                                    </children>
+                                 </HBox>
 							  </HBox>
-                              <HBox prefHeight="100.0" prefWidth="200.0" >
+                              <HBox prefHeight="100.0" prefWidth="200.0">
 	                              <ImageView fx:id="toggleOff" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true">
 								  </ImageView>
 								  <ImageView fx:id="toggleOn" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true">
 								  </ImageView>
 							  </HBox>
-                              <HBox prefHeight="100.0" prefWidth="200.0" >
+                              <HBox prefHeight="100.0" prefWidth="200.0">
 	                              
 							  </HBox>
                            </children>
