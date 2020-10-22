@@ -13,14 +13,12 @@ public class Randomizer implements Runnable {
 		return (new Random().nextBoolean());
 	}
 	public Boolean frontDoor() {
-		do {
 			int ran = 7;
-			int rand = (new Random().nextInt()*(9-0)+0);
+			int rand = (new Random().nextInt(9));
 			if(rand==ran) {
 				return true;
 			}
 			return false;
-		} while(true);
 	}
 	@Override
 	public void run() {
@@ -29,15 +27,15 @@ public class Randomizer implements Runnable {
 			do {
 				double temp = getRandomTemp(-1,30);
 				double windSpeed = getRandomWindSpeed(0,20);
-				Boolean frontDoor = getRandomFrontDoor();
+				Boolean frontDoor = frontDoor();
 				activity.setVariables(temp, windSpeed, frontDoor);
 				System.out.println(activity.getTemperature());
 				System.out.println(activity.getWindSpeed());
 				System.out.println(activity.getFrontDoor());
-				Thread.sleep(10000);
+				Thread.sleep(1000);
 			} while(true);
 		} catch(InterruptedException e) {
-			System.out.println("Error !");
+			System.out.println("Error in Randomizer Thread !");
 		}
 	}
 }
