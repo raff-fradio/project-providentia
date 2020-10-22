@@ -139,15 +139,15 @@
                                           </HBox>
                                           <HBox prefHeight="100.0" prefWidth="200.0">
                                           <children>
-                                                <ImageView fx:id="heater" fitHeight="200" fitWidth="200" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="heater" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
 					                      		</ImageView>
-      					                      	<ImageView fx:id="cctv" fitHeight="200" fitWidth="200" pickOnBounds="true" preserveRatio="true">
+      					                      	<ImageView fx:id="cctv" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
 					                      		</ImageView>
                                              </children>
                                           </HBox>
                                           <HBox prefHeight="100.0" prefWidth="200.0">
                                           <children>
-                                                <ImageView fx:id="window" fitHeight="200" fitWidth="200" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="window" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
 					                      		</ImageView>
                                              </children>
                                           </HBox>
@@ -201,6 +201,23 @@
                                     <Font name="System Bold" size="24.0" />
                                  </font>
                               </Text>
+                              <HBox prefHeight="100.0" prefWidth="200.0" >
+	                              <ImageView fx:id="temp" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
+								  </ImageView>
+	                              <ImageView fx:id="buttonUp" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true">
+								  </ImageView>
+								  <ImageView fx:id="buttonDown" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true">
+								  </ImageView>
+							  </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" >
+	                              <ImageView fx:id="toggleOff" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true">
+								  </ImageView>
+								  <ImageView fx:id="toggleOn" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true">
+								  </ImageView>
+							  </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" >
+	                              
+							  </HBox>
                            </children>
                            <padding>
                               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

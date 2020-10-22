@@ -47,6 +47,7 @@ public class MainController implements Initializable, Observer {
 	@FXML private ImageView buttonDown;
 	@FXML private ImageView toggleOff;
 	@FXML private ImageView toggleOn;
+	@FXML private ImageView temp;
 	
     private double xOffSet = 0;
     private double yOffSet = 0;
@@ -129,6 +130,11 @@ public class MainController implements Initializable, Observer {
 		Image toggleOnImage = new Image(new File(toggleOnPath).toURI().toString());
 		
 		toggleOn.setImage(toggleOnImage);
+		
+		String tempPath = new File("src/main/resources/com/project/providentia/temp.png").getAbsolutePath();
+		Image tempImage = new Image(new File(tempPath).toURI().toString());
+		
+		temp.setImage(tempImage);
 	}
 	
 	@FXML
