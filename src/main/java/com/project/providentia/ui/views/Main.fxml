@@ -39,14 +39,14 @@
                <children>
                   <VBox prefWidth="800.0">
                      <children>
-                        <StackPane prefWidth="300.0">
+                        <StackPane>
                            <children>
-                              <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222; -fx-opacity: 75%; -fx-background-radius: 10;" />
-                              <VBox alignment="CENTER_LEFT" prefHeight="200.0">
+                              <Region style="-fx-background-color: #222; -fx-opacity: 75%; -fx-background-radius: 10;" />
+                              <VBox alignment="CENTER_LEFT">
                                  <children>
                                     <Text fx:id="dateLabel" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday, January 1, 2020">
                                        <font>
-                                          <Font name="System Bold" size="32.0" />
+                                          <Font name="System Bold" size="28.0" />
                                        </font>
                                     </Text>
                                     <HBox alignment="CENTER_LEFT">
@@ -60,7 +60,7 @@
                                                 </Text>
                                                 <Text fx:id="clockLabel" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="07:30 AM" wrappingWidth="250.0">
                                                    <font>
-                                                      <Font name="System Bold" size="32.0" />
+                                                      <Font name="System Bold" size="28.0" />
                                                    </font>
                                                 </Text>
                                              </children>
@@ -77,7 +77,7 @@
                                                 </Text>
                                                 <Text fx:id="temperatureLabel" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="20 Celsius" wrappingWidth="250.0">
                                                    <font>
-                                                      <Font name="System Bold" size="32.0" />
+                                                      <Font name="System Bold" size="28.0" />
                                                    </font>
                                                 </Text>
                                              </children>
@@ -91,7 +91,7 @@
                                                 </Text>
                                                 <Text fx:id="windSpeedLabel" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="100 km/h" wrappingWidth="250.0">
                                                    <font>
-                                                      <Font name="System Bold" size="32.0" />
+                                                      <Font name="System Bold" size="28.0" />
                                                    </font>
                                                 </Text>
                                              </children>
@@ -121,35 +121,72 @@
                            <children>
                               <StackPane prefWidth="400.0" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222; -fx-opacity: 75%; -fx-background-radius: 10;" />
-                                    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                    <Region style="-fx-background-color: #222; -fx-opacity: 75%; -fx-background-radius: 10;" />
+                                    <VBox alignment="TOP_CENTER">
                                        <children>
                                           <Text fx:id="clock1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
                                              <font>
                                                 <Font name="System Bold" size="24.0" />
                                              </font>
                                           </Text>
-                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                              <children>
-                                                <ImageView fx:id="ac" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-					                      		</ImageView>
-      					                      	<ImageView fx:id="light" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-					                      		</ImageView>
+                                                <ImageView fx:id="ac" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                                   <HBox.margin>
+                                                      <Insets right="10.0" />
+                                                   </HBox.margin></ImageView>
+      					                      	<ImageView fx:id="light" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin></ImageView>
                                              </children>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
                                           </HBox>
-                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                           <children>
+<<<<<<< Updated upstream
                                                 <ImageView fx:id="heater" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
 					                      		</ImageView>
       					                      	<ImageView fx:id="cctv" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
 					                      		</ImageView>
+=======
+                                                <ImageView fx:id="heater" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                                   <HBox.margin>
+                                                      <Insets right="10.0" />
+                                                   </HBox.margin></ImageView>
+      					                      	<ImageView fx:id="cctv" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin></ImageView>
+>>>>>>> Stashed changes
                                              </children>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
                                           </HBox>
-                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                           <children>
+<<<<<<< Updated upstream
                                                 <ImageView fx:id="window" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
+=======
+                                                <ImageView fx:id="window" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+>>>>>>> Stashed changes
 					                      		</ImageView>
                                              </children>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
                                           </HBox>
                                        </children>
                                        <padding>
@@ -163,8 +200,8 @@
                               </StackPane>
                               <StackPane prefWidth="400.0" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222; -fx-opacity: 75%; -fx-background-radius: 10;" />
-                                    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                    <Region style="-fx-background-color: #222; -fx-opacity: 75%; -fx-background-radius: 10;" />
+                                    <VBox alignment="TOP_CENTER">
                                        <children>
                                           <Text fx:id="clock11" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Notifications">
                                              <font>
@@ -193,7 +230,7 @@
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </HBox.margin>
                      <children>
-                        <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222; -fx-opacity: 75%; -fx-background-radius: 10;" />
+                        <Region style="-fx-background-color: #222; -fx-opacity: 75%; -fx-background-radius: 10;" />
                         <VBox alignment="TOP_CENTER">
                            <children>
                               <Text fx:id="clock12" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Controls">
