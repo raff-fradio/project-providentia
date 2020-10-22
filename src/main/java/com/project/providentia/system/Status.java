@@ -14,7 +14,7 @@ public class Status implements Runnable {
 	private final double MAX_WIND_SPEED = 80;
 	private final double HIGH_TEMP = 26;
 	private final double LOW_TEMP = 18;
-	LocalTime timeNow = LocalTime.now();
+	private final LocalTime TIME_NOW = LocalTime.now();
 	
 	public Status(double wind, double temp) {
 		this.wind = wind;
@@ -34,7 +34,7 @@ public class Status implements Runnable {
 		return outdoorLight;
 	}
 	public void setOutdoorLight() {
-		if(timeNow.isBefore(EVENING) && timeNow.isAfter(MORNING)) {
+		if(TIME_NOW.isBefore(EVENING) && TIME_NOW.isAfter(MORNING)) {
 			outdoorLight = false;
 		} else {
 			outdoorLight = true;
