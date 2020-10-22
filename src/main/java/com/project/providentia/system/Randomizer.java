@@ -2,6 +2,7 @@ package com.project.providentia.system;
 
 import java.util.Random;
 
+
 public class Randomizer implements Runnable {
 	public double getRandomTemp(double min, double max) {
 		return (new Random().nextDouble()*(max-min)+min);
@@ -13,19 +14,20 @@ public class Randomizer implements Runnable {
 		return (new Random().nextBoolean());
 	}
 	public Boolean frontDoor() {
+		do {
 			int ran = 7;
-			int rand = (new Random().nextInt(9));
+			int rand = (new Random().nextInt()*(9-0)+0);
 			if(rand==ran) {
 				return true;
 			}
-			return false;
+		} while(true);
 	}
 	@Override
 	public void run() {
 		Activity activity = new Activity();	
 		try {
 			do {
-				double temp = getRandomTemp(-1,30);
+				double temp = getRandomTemp(-10,30);
 				double windSpeed = getRandomWindSpeed(0,20);
 				Boolean frontDoor = frontDoor();
 				activity.setVariables(temp, windSpeed, frontDoor);
