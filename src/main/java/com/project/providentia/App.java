@@ -19,6 +19,10 @@ import com.project.providentia.system.Status;
 public class App extends Application {
 
 	public static Stage stage = null;
+	
+    public static void main(String[] args) {
+    	launch();
+    }
 
 	@Override
     public void start(Stage primaryStage) throws Exception {
@@ -41,16 +45,5 @@ public class App extends Application {
 		primaryStage.show();
     }
 
-    public static void main(String[] args) {
-    	Activity act = new Activity();
-    	Randomizer rd = new Randomizer();
-    	Thread thread = new Thread(rd);
-    	thread.start();
-		Status st = new Status(act.getWindSpeed(),act.getTemperature());
-    	Thread thread2 = new Thread(st);
-    	thread2.start();    	
-
-    	launch();
-    }
 
 }
