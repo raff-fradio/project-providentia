@@ -55,6 +55,7 @@ public class MainController implements Initializable, Observer {
 		
 		sensorData = SensorData.getInstance();
 		sensorData.registerObserver(this);
+		status = new Status();
 		
 		initImages();
 		makeStageDragable();

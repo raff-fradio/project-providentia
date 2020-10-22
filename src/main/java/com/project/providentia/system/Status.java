@@ -8,6 +8,14 @@ public class Status {
 	private boolean outdoorLight;
 	private boolean guest;
 	
+	public Status() {
+		ac = true;
+		heater = false;
+		windShield = true;
+		outdoorLight = true;
+		guest = false;
+	}
+	
 	public boolean isAc() {
 		return ac;
 	}
