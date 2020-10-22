@@ -79,6 +79,7 @@ public class MainController implements Initializable, Observer {
 		control = new Control();
 		
 		initImages();
+		initBindings();
 		makeStageDragable();
 
 		startClock();
@@ -199,31 +200,70 @@ public class MainController implements Initializable, Observer {
 	public void updateActivity(double temperature, double windSpeed, boolean frontDoor) {
 		temperatureLabel.setText(temperature + " \u00B0C");
 		windSpeedLabel.setText(windSpeed + " km/h");
-		if (control.getTemperature() < temperature) {
-			System.out.println("AC turned off, Heater turned on");
-			ac.setOpacity(0.5);			
-			heater.setOpacity(1);			
-		} else {
-			System.out.println("Heater turned off, AC turned on");
-			heater.setOpacity(0.5);	
-			ac.setOpacity(1);
-		}
 		
-		if (windSpeed > Status.SAFE_WIND_SPEED) {
-			System.out.println("Wind shield engaged");
-			window.setOpacity(1);	
-		} else {
-			System.out.println("Wind shield disabled");
-			window.setOpacity(0.5);			
-		}
-		
-		if (frontDoor) {
-			System.out.println("Alert! Guest on front door!");
-			cctv.setOpacity(0.5);
-		} else {
-			cctv.setOpacity(1);
-		}
-		
-		System.out.println();
+		status.setAc(control.getTemperature() > temperature);
+		status.setHeater(control.getTemperature() < temperature);
+		status.setWindShield(windSpeed > Status.SAFE_WIND_SPEED);
+		status.setGuest(frontDoor);
 	}
+	
+	private void initBindings() {
+		status.acProperty().addListener((v, oldValue, newValue) -> {
+			if (oldValue != newValue) {
+				if (newValue) {
+					System.out.println("AC turned on");
+					ac.setOpacity(1);
+				} else {
+					System.out.println("AC turned off.");
+					ac.setOpacity(0.5);
+				}
+			}
+		});
+		status.heaterProperty().addListener((v, oldValue, newValue) -> {
+			if (oldValue != newValue) {
+				if (newValue) {
+					System.out.println("Heater turned on");
+					heater.setOpacity(1);
+				} else {
+					System.out.println("Heater turned off.");
+					heater.setOpacity(0.5);
+				}
+			}
+		});
+		status.windShieldProperty().addListener((v, oldValue, newValue) -> {
+			if (oldValue != newValue) {
+				if (newValue) {
+					System.out.println("Window shield engaged.");
+					window.setOpacity(1);
+				} else {
+					System.out.println("Window shield disengaged.");
+					window.setOpacity(0.5);
+				}
+			}
+		});
+		status.outdoorLightProperty().addListener((v, oldValue, newValue) -> {
+			if (oldValue != newValue) {
+				if (newValue) {
+					System.out.println("Outdoor lights enabled.");
+					light.setOpacity(1);
+				} else {
+					System.out.println("Outdoor lights disabled.");
+					light.setOpacity(0.5);
+				}
+			}
+		});
+		status.guestProperty().addListener((v, oldValue, newValue) -> {
+			if (oldValue != newValue) {
+				if (newValue) {
+					System.out.println("Alert! Guest on front door!");
+					cctv.setOpacity(1);
+				} else {
+					System.out.println("Front Door alert disengaged.");
+					cctv.setOpacity(0.5);
+				}
+			}
+		});
+	}
+
+	
 }

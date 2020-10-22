@@ -2,7 +2,7 @@ package com.project.providentia.system;
 
 public class Sensor implements Runnable {
 
-	private final int DURATION = 1;
+	private final int DURATION = 5;
 	
 	private SensorData sensorData;
 	private Randomizer randomizer;
