@@ -17,7 +17,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 public class NotifGenerator {
@@ -25,16 +24,15 @@ public class NotifGenerator {
 	private Font defaultFont;
 	
 	public NotifGenerator() {
-		defaultFont = Font.font("System", FontWeight.BOLD, 16);
-		
+		defaultFont = Font.font("System", 14);
 	}
 
 	public void append(VBox notifBox, String text) {
 		LocalTime time = LocalTime.now();
-		DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm:ss a");
+		DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm a");
 		String formattedTime = time.format(timeFormat);
 		
-		HBox newEntry = new HBox(30);
+		HBox newEntry = new HBox(16);
 		newEntry.setAlignment(Pos.CENTER_LEFT);
 		
 		Text timestamp = new Text(formattedTime);
@@ -48,13 +46,14 @@ public class NotifGenerator {
 		newEntry.getChildren().addAll(timestamp, message);
 		
 		List<Node> tempList = new ArrayList<Node>();
-		if (tempList.size() == 10) {
-			tempList.remove(9);
-			System.out.println("Notification max reached.");
-		}
 		
 		tempList.add(newEntry);
 		tempList.addAll(notifBox.getChildren());
+		
+//		if (tempList.size() == 10) {
+//			tempList.remove(9);
+//			System.out.println("Notification max reached.");
+//		}
 		
 		notifBox.getChildren().setAll(tempList);
 	}

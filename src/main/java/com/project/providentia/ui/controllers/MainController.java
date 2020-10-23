@@ -19,6 +19,8 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -34,6 +36,7 @@ public class MainController implements Initializable, Observer {
 	@FXML private ImageView closeBtn;
 	@FXML private StackPane closeArea;
 	@FXML private VBox notifications;
+	@FXML private ScrollPane scrollPane;
 	
 	@FXML private Text dateLabel;
 	@FXML private Text clockLabel;
@@ -88,13 +91,13 @@ public class MainController implements Initializable, Observer {
 		notifGenerator = new NotifGenerator();
 		
 		temperatureControl.setText(control.getTemperature() + " \u00B0C");
+		scrollPane.setHbarPolicy(ScrollBarPolicy.NEVER);
 		
 		initImages();
 		initBindings();
 		makeStageDragable();
 
 		startClock();
-		
 	}
 
 	private void initImages() {
@@ -283,13 +286,13 @@ public class MainController implements Initializable, Observer {
 			domeLightBed.setOpacity(0.5);
 			control.setLight("Bedroom", false);
 			switchBed.setImage(new Image(new File(SWITCH_OFF_PATH).toURI().toString()));
-			System.out.println("Bedroom lights turned off.");
+			notifGenerator.append(notifications, "Bedroom lights turned off.");
 			
 		} else {
 			domeLightBed.setOpacity(1);
 			control.setLight("Bedroom", true);
 			switchBed.setImage(new Image(new File(SWITCH_ON_PATH).toURI().toString()));
-			System.out.println("Bedroom lights turned on.");
+			notifGenerator.append(notifications, "Bedroom lights turned on.");
 		}
 	}
 	
@@ -299,13 +302,13 @@ public class MainController implements Initializable, Observer {
 			domeLightBath.setOpacity(0.5);
 			control.setLight("Bathroom", false);
 			switchBath.setImage(new Image(new File(SWITCH_OFF_PATH).toURI().toString()));
-			System.out.println("Bathroom lights turned off.");
+			notifGenerator.append(notifications, "Bathroom lights turned off.");
 			
 		} else {
 			domeLightBath.setOpacity(1);
 			control.setLight("Bathroom", true);
 			switchBath.setImage(new Image(new File(SWITCH_ON_PATH).toURI().toString()));
-			System.out.println("Bathroom lights turned on.");
+			notifGenerator.append(notifications, "Bathroom lights turned on.");
 		}
 	}
 	
@@ -315,13 +318,13 @@ public class MainController implements Initializable, Observer {
 			domeLightKitchen.setOpacity(0.5);
 			control.setLight("Kitchen", false);
 			switchKitchen.setImage(new Image(new File(SWITCH_OFF_PATH).toURI().toString()));
-			System.out.println("Kitchen lights turned off.");
+			notifGenerator.append(notifications, "Kitchen lights turned off.");
 			
 		} else {
 			domeLightKitchen.setOpacity(1);
 			control.setLight("Kitchen", true);
 			switchKitchen.setImage(new Image(new File(SWITCH_ON_PATH).toURI().toString()));
-			System.out.println("Kitchen lights turned on.");
+			notifGenerator.append(notifications, "Kitchen lights turned on.");
 		}
 	}
 	
@@ -331,13 +334,13 @@ public class MainController implements Initializable, Observer {
 			domeLightLiving.setOpacity(0.5);
 			control.setLight("Living Room", false);
 			switchLiving.setImage(new Image(new File(SWITCH_OFF_PATH).toURI().toString()));
-			System.out.println("Living Room lights turned off.");
+			notifGenerator.append(notifications, "Living Room lights turned off.");
 			
 		} else {
 			domeLightLiving.setOpacity(1);
 			control.setLight("Living Room", true);
 			switchLiving.setImage(new Image(new File(SWITCH_ON_PATH).toURI().toString()));
-			System.out.println("Living Room lights turned on.");
+			notifGenerator.append(notifications, "Living Room lights turned on.");
 		}
 	}
 
