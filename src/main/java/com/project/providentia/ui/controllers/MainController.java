@@ -272,12 +272,18 @@ public class MainController implements Initializable, Observer {
 
 	@FXML
 	private void toggleBed() {
-//		if (control.getLight("Bedroom")) {
-//			
-//		} else {
-//			domeLightBed.setOpacity(1);
-//			
-//		}
+		if (control.getLight("Bedroom")) {
+			domeLightBed.setOpacity(0.5);
+			control.setLight("Bedroom", false);
+			switchBed.setImage(new Image(new File(SWITCH_OFF_PATH).toURI().toString()));
+			System.out.println("Bedroom lights turned off.");
+			
+		} else {
+			domeLightBed.setOpacity(1);
+			control.setLight("Bedroom", true);
+			switchBed.setImage(new Image(new File(SWITCH_ON_PATH).toURI().toString()));
+			System.out.println("Bedroom lights turned on.");
+		}
 	}
 	
 	@FXML
