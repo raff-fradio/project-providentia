@@ -288,7 +288,7 @@
                                     </HBox.margin>
                                  </HBox>
                                  <VBox.margin>
-                                    <Insets top="20.0" />
+                                    <Insets top="10.0" />
                                  </VBox.margin>
 							  </HBox>
                               <HBox prefHeight="100.0" prefWidth="200.0">
@@ -303,7 +303,10 @@
                                        </Label>
                                     </children>
                                  </HBox>
-                                 <ImageView fx:id="switchBed" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true" translateX="65.0" translateY="40.0" />
+                                 <ImageView fx:id="switchBed" fitHeight="50" fitWidth="50" onMouseReleased="#toggleBed" pickOnBounds="true" preserveRatio="true" translateX="65.0" translateY="40.0" />
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
 							  </HBox>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
@@ -317,8 +320,11 @@
                                           </Label>
                                        </children>
                                     </HBox>
-                                    <ImageView fx:id="switchBath" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true" translateX="65.0" translateY="45.0" />
+                                    <ImageView fx:id="switchBath" fitHeight="50" fitWidth="50" onMouseReleased="#toggleBath" pickOnBounds="true" preserveRatio="true" translateX="65.0" translateY="45.0" />
                                  </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
                               </HBox>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
@@ -332,8 +338,11 @@
                                           </Label>
                                        </children>
                                     </HBox>
-                                    <ImageView fx:id="switchKitchen" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true" translateX="65.0" translateY="45.0" />
+                                    <ImageView fx:id="switchKitchen" fitHeight="50" fitWidth="50" onMouseReleased="#toggleKitchen" pickOnBounds="true" preserveRatio="true" translateX="65.0" translateY="45.0" />
                                  </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
                               </HBox>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
@@ -347,8 +356,11 @@
                                           </Label>
                                        </children>
                                     </HBox>
-                                    <ImageView fx:id="switchLiving" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true" translateX="65.0" translateY="45.0" />
+                                    <ImageView fx:id="switchLiving" fitHeight="50" fitWidth="50" onMouseReleased="#toggleLiving" pickOnBounds="true" preserveRatio="true" translateX="65.0" translateY="45.0" />
                                  </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
                               </HBox>
                            </children>
                            <padding>

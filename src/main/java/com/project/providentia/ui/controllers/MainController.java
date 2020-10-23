@@ -56,6 +56,8 @@ public class MainController implements Initializable, Observer {
 	@FXML private ImageView domeLightKitchen;
 	@FXML private ImageView domeLightLiving;
 	
+	@FXML private Text temperatureControl;
+	
     private double xOffSet = 0;
     private double yOffSet = 0;
     
@@ -65,6 +67,9 @@ public class MainController implements Initializable, Observer {
     
     private DateTimeFormatter dateFormat;
     private DateTimeFormatter clockFormat;
+    
+	private final String SWITCH_ON_PATH = new File("src/main/resources/com/project/providentia/toggle_on.png").getAbsolutePath();
+	private final String SWITCH_OFF_PATH = new File("src/main/resources/com/project/providentia/toggle_off.png").getAbsolutePath();
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -100,27 +105,32 @@ public class MainController implements Initializable, Observer {
 		Image acImage = new Image(new File(acPath).toURI().toString());
 		
 		ac.setImage(acImage);	
-		
+		ac.setOpacity(0.5);
+
 		String lightPath = new File("src/main/resources/com/project/providentia/light.png").getAbsolutePath();
 		Image lightImage = new Image(new File(lightPath).toURI().toString());
 		
-		light.setImage(lightImage);	
+		light.setImage(lightImage);
+		light.setOpacity(0.5);
 		
 		String heaterPath = new File("src/main/resources/com/project/providentia/heater.png").getAbsolutePath();
 		Image heaterImage = new Image(new File(heaterPath).toURI().toString());
 		
-		heater.setImage(heaterImage);	
+		heater.setImage(heaterImage);
+		heater.setOpacity(0.5);
 		
 		String cctvPath = new File("src/main/resources/com/project/providentia/cctv.png").getAbsolutePath();
 		Image cctvImage = new Image(new File(cctvPath).toURI().toString());
 		
 		cctv.setImage(cctvImage);
-		
+		cctv.setOpacity(0.5);
+
 		String windowPath = new File("src/main/resources/com/project/providentia/window.png").getAbsolutePath();
 		Image windowImage = new Image(new File(windowPath).toURI().toString());
 		
 		window.setImage(windowImage);
-		
+		window.setOpacity(0.5);
+
 		String buttonUpPath = new File("src/main/resources/com/project/providentia/button_up.png").getAbsolutePath();
 		Image buttonUpImage = new Image(new File(buttonUpPath).toURI().toString());
 		
@@ -131,21 +141,12 @@ public class MainController implements Initializable, Observer {
 		
 		buttonDown.setImage(buttonDownImage);
 		
-		String switchPath = new File("src/main/resources/com/project/providentia/toggle_off.png").getAbsolutePath();
-		Image switchBedImage = new Image(new File(switchPath).toURI().toString());
-		Image switchBathImage = new Image(new File(switchPath).toURI().toString());
-		Image switchKitchenImage = new Image(new File(switchPath).toURI().toString());
-		Image switchLivingImage = new Image(new File(switchPath).toURI().toString());
-		
-		
-		switchBed.setImage(switchBedImage);
-		switchBath.setImage(switchBathImage);
-		switchKitchen.setImage(switchKitchenImage);
-		switchLiving.setImage(switchLivingImage);
-		
-		String toggleOnPath = new File("src/main/resources/com/project/providentia/toggle_on.png").getAbsolutePath();
-		Image toggleOnImage = new Image(new File(toggleOnPath).toURI().toString());
-		
+		Image switchOffImage = new Image(new File(SWITCH_OFF_PATH).toURI().toString());
+
+		switchBed.setImage(switchOffImage);
+		switchBath.setImage(switchOffImage);
+		switchKitchen.setImage(switchOffImage);
+		switchLiving.setImage(switchOffImage);
 		
 		String tempPath = new File("src/main/resources/com/project/providentia/temp.png").getAbsolutePath();
 		Image tempImage = new Image(new File(tempPath).toURI().toString());
@@ -153,15 +154,19 @@ public class MainController implements Initializable, Observer {
 		temp.setImage(tempImage);
 		
 		String domeLightPath = new File("src/main/resources/com/project/providentia/dome_light.png").getAbsolutePath();
-		Image domeLightBedImage = new Image(new File(domeLightPath).toURI().toString());
-		Image domeLightBathImage = new Image(new File(domeLightPath).toURI().toString());
-		Image domeLightKitchenImage = new Image(new File(domeLightPath).toURI().toString());
-		Image domeLightLivingImage = new Image(new File(domeLightPath).toURI().toString());
 		
-		domeLightBed.setImage(domeLightBedImage);
-		domeLightBath.setImage(domeLightBathImage);
-		domeLightKitchen.setImage(domeLightKitchenImage);
-		domeLightLiving.setImage(domeLightLivingImage);
+		Image domeLight = new Image(new File(domeLightPath).toURI().toString());
+		
+		domeLightBed.setImage(domeLight);
+		domeLightBath.setImage(domeLight);
+		domeLightKitchen.setImage(domeLight);
+		domeLightLiving.setImage(domeLight);
+		
+		domeLightBed.setOpacity(0.5);
+		domeLightBath.setOpacity(0.5);
+		domeLightKitchen.setOpacity(0.5);
+		domeLightLiving.setOpacity(0.5);
+
 	}
 	
 	@FXML
@@ -201,8 +206,8 @@ public class MainController implements Initializable, Observer {
 		temperatureLabel.setText(temperature + " \u00B0C");
 		windSpeedLabel.setText(windSpeed + " km/h");
 		
-		status.setAc(control.getTemperature() > temperature);
-		status.setHeater(control.getTemperature() < temperature);
+		status.setAc(control.getTemperature() < temperature);
+		status.setHeater(control.getTemperature() > temperature);
 		status.setWindShield(windSpeed > Status.SAFE_WIND_SPEED);
 		status.setGuest(frontDoor);
 	}
@@ -265,5 +270,28 @@ public class MainController implements Initializable, Observer {
 		});
 	}
 
+	@FXML
+	private void toggleBed() {
+//		if (control.getLight("Bedroom")) {
+//			
+//		} else {
+//			domeLightBed.setOpacity(1);
+//			
+//		}
+	}
 	
+	@FXML
+	private void toggleBath() {
+		
+	}
+	
+	@FXML
+	private void toggleKitchen() {
+		
+	}
+	
+	@FXML
+	private void toggleLiving() {
+		
+	}
 }
