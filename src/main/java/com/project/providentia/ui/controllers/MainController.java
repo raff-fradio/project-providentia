@@ -288,16 +288,60 @@ public class MainController implements Initializable, Observer {
 	
 	@FXML
 	private void toggleBath() {
-		
+		if (control.getLight("Bathroom")) {
+			domeLightBath.setOpacity(0.5);
+			control.setLight("Bathroom", false);
+			switchBath.setImage(new Image(new File(SWITCH_OFF_PATH).toURI().toString()));
+			System.out.println("Bathroom lights turned off.");
+			
+		} else {
+			domeLightBath.setOpacity(1);
+			control.setLight("Bathroom", true);
+			switchBath.setImage(new Image(new File(SWITCH_ON_PATH).toURI().toString()));
+			System.out.println("Bathroom lights turned on.");
+		}
 	}
 	
 	@FXML
 	private void toggleKitchen() {
-		
+		if (control.getLight("Kitchen")) {
+			domeLightKitchen.setOpacity(0.5);
+			control.setLight("Kitchen", false);
+			switchKitchen.setImage(new Image(new File(SWITCH_OFF_PATH).toURI().toString()));
+			System.out.println("Kitchen lights turned off.");
+			
+		} else {
+			domeLightKitchen.setOpacity(1);
+			control.setLight("Kitchen", true);
+			switchKitchen.setImage(new Image(new File(SWITCH_ON_PATH).toURI().toString()));
+			System.out.println("Kitchen lights turned on.");
+		}
 	}
 	
 	@FXML
 	private void toggleLiving() {
+		if (control.getLight("Living Room")) {
+			domeLightLiving.setOpacity(0.5);
+			control.setLight("Living Room", false);
+			switchLiving.setImage(new Image(new File(SWITCH_OFF_PATH).toURI().toString()));
+			System.out.println("Living Room lights turned off.");
+			
+		} else {
+			domeLightLiving.setOpacity(1);
+			control.setLight("Living Room", true);
+			switchLiving.setImage(new Image(new File(SWITCH_ON_PATH).toURI().toString()));
+			System.out.println("Living Room lights turned on.");
+		}
+	}
+
+	@FXML
+	private void increaseTemp() {
+		control.setTemperature(control.getTemperature() + 1);
+		temperatureControl.setText(control.getTemperature() + "\u00B0C");
+	}
+	
+	@FXML
+	private void decreaseTemp() {
 		
 	}
 }
