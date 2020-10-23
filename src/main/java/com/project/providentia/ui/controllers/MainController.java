@@ -23,6 +23,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -31,7 +32,8 @@ public class MainController implements Initializable, Observer {
 	@FXML private HBox topbar;
 	@FXML private ImageView background;
 	@FXML private ImageView closeBtn;
-	@FXML private StackPane closeArea;	
+	@FXML private StackPane closeArea;
+	@FXML private VBox notifications;
 	
 	@FXML private Text dateLabel;
 	@FXML private Text clockLabel;
@@ -64,6 +66,7 @@ public class MainController implements Initializable, Observer {
     private SensorData sensorData;
     private Status status;
     private Control control;
+    private NotifGenerator notifGenerator;
     
     private DateTimeFormatter dateFormat;
     private DateTimeFormatter clockFormat;
@@ -82,12 +85,16 @@ public class MainController implements Initializable, Observer {
 		sensorData.registerObserver(this);
 		status = new Status();
 		control = new Control();
+		notifGenerator = new NotifGenerator();
+		
+		temperatureControl.setText(control.getTemperature() + " \u00B0C");
 		
 		initImages();
 		initBindings();
 		makeStageDragable();
 
 		startClock();
+		
 	}
 
 	private void initImages() {
@@ -216,10 +223,10 @@ public class MainController implements Initializable, Observer {
 		status.acProperty().addListener((v, oldValue, newValue) -> {
 			if (oldValue != newValue) {
 				if (newValue) {
-					System.out.println("AC turned on");
+					notifGenerator.append(notifications, "AC turned on");
 					ac.setOpacity(1);
 				} else {
-					System.out.println("AC turned off.");
+					notifGenerator.append(notifications, "AC turned off");
 					ac.setOpacity(0.5);
 				}
 			}
@@ -227,10 +234,10 @@ public class MainController implements Initializable, Observer {
 		status.heaterProperty().addListener((v, oldValue, newValue) -> {
 			if (oldValue != newValue) {
 				if (newValue) {
-					System.out.println("Heater turned on");
+					notifGenerator.append(notifications, "Heater turned on");
 					heater.setOpacity(1);
 				} else {
-					System.out.println("Heater turned off.");
+					notifGenerator.append(notifications, "Heater turned off");
 					heater.setOpacity(0.5);
 				}
 			}
@@ -238,10 +245,10 @@ public class MainController implements Initializable, Observer {
 		status.windShieldProperty().addListener((v, oldValue, newValue) -> {
 			if (oldValue != newValue) {
 				if (newValue) {
-					System.out.println("Window shield engaged.");
+					notifGenerator.append(notifications, "Window shield engaged.");
 					window.setOpacity(1);
 				} else {
-					System.out.println("Window shield disengaged.");
+					notifGenerator.append(notifications, "Window shield disengaged.");
 					window.setOpacity(0.5);
 				}
 			}
@@ -249,10 +256,10 @@ public class MainController implements Initializable, Observer {
 		status.outdoorLightProperty().addListener((v, oldValue, newValue) -> {
 			if (oldValue != newValue) {
 				if (newValue) {
-					System.out.println("Outdoor lights enabled.");
+					notifGenerator.append(notifications, "Outdoor lights enabled.");
 					light.setOpacity(1);
 				} else {
-					System.out.println("Outdoor lights disabled.");
+					notifGenerator.append(notifications, "Outdoor lights disabled.");
 					light.setOpacity(0.5);
 				}
 			}
@@ -260,10 +267,10 @@ public class MainController implements Initializable, Observer {
 		status.guestProperty().addListener((v, oldValue, newValue) -> {
 			if (oldValue != newValue) {
 				if (newValue) {
-					System.out.println("Alert! Guest on front door!");
+					notifGenerator.append(notifications, "Alert! Guest on front door!");
 					cctv.setOpacity(1);
 				} else {
-					System.out.println("Front Door alert disengaged.");
+					notifGenerator.append(notifications, "Front Door alert disengaged.");
 					cctv.setOpacity(0.5);
 				}
 			}
@@ -342,6 +349,7 @@ public class MainController implements Initializable, Observer {
 	
 	@FXML
 	private void decreaseTemp() {
-		
+		control.setTemperature(control.getTemperature() - 1);
+		temperatureControl.setText(control.getTemperature() + "\u00B0C");
 	}
 }

@@ -29,16 +29,13 @@ public class App extends Application {
 		
 		Parent root = FXMLLoader.load(getClass().getResource("ui/views/Main.fxml"));
 		Scene scene = new Scene(root);
-//		scene.getStylesheets().add(getClass().getResource("ui/css/main.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("ui/css/main.css").toExternalForm());
                 
 		primaryStage.setScene(scene);
 		primaryStage.initStyle(StageStyle.UNDECORATED);
-		primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-		    @Override
-		    public void handle(WindowEvent t) {
-		        Platform.exit();
-		        System.exit(0);
-		    }
+		primaryStage.setOnCloseRequest((t) -> {
+	        Platform.exit();
+	        System.exit(0);
 		});
 		
 		primaryStage.show();

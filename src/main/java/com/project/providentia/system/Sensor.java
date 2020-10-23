@@ -1,5 +1,7 @@
 package com.project.providentia.system;
 
+import javafx.application.Platform;
+
 public class Sensor implements Runnable {
 
 	private final int DURATION = 5;
@@ -16,7 +18,9 @@ public class Sensor implements Runnable {
 	public void run() {
 		while (true) {
 			try {
-				sensorData.setVariables(randomizer.getRandomTemperature(), randomizer.getRandomWindSpeed(), randomizer.getRandomFrontDoor());
+				Platform.runLater(() -> {
+					sensorData.setVariables(randomizer.getRandomTemperature(), randomizer.getRandomWindSpeed(), randomizer.getRandomFrontDoor());					
+				});
 				Thread.sleep(DURATION * 1000);
 			} catch (InterruptedException e) {	
 				e.printStackTrace();

@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -46,7 +47,7 @@
                         <StackPane>
                            <children>
                               <Region style="-fx-background-color: #222; -fx-opacity: 75%; -fx-background-radius: 10;" />
-                              <VBox alignment="CENTER_LEFT">
+                              <VBox fx:id="sensorUI" alignment="CENTER_LEFT">
                                  <children>
                                     <Text fx:id="dateLabel" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday, January 1, 2020">
                                        <font>
@@ -204,13 +205,18 @@
                               <StackPane prefWidth="400.0" HBox.hgrow="ALWAYS">
                                  <children>
                                     <Region style="-fx-background-color: #222; -fx-opacity: 75%; -fx-background-radius: 10;" />
-                                    <VBox alignment="TOP_CENTER">
+                                    <VBox alignment="TOP_CENTER" spacing="20.0">
                                        <children>
                                           <Text fx:id="clock11" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Notifications">
                                              <font>
                                                 <Font name="System Bold" size="24.0" />
                                              </font>
                                           </Text>
+                                          <ScrollPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                             <content>
+                                                <VBox fx:id="notifications" prefWidth="345.0" />
+                                             </content>
+                                          </ScrollPane>
                                        </children>
                                        <padding>
                                           <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -258,28 +264,25 @@
                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                          </rowConstraints>
                                           <children>
-                                             <Label fx:id="tempValue" alignment="CENTER" contentDisplay="CENTER" text="20 C" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER">
-                                                <GridPane.margin>
-                                                   <Insets />
-                                                </GridPane.margin>
-                                                <font>
-                                                   <Font name="System Bold" size="32.0" />
-                                                </font>
-                                             </Label>
                                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                                                 <children>
-                  	                              <ImageView fx:id="buttonUp" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  	                              <ImageView fx:id="buttonUp" fitHeight="40.0" fitWidth="40.0" onMouseReleased="#increaseTemp" pickOnBounds="true" preserveRatio="true">
                                                       <VBox.margin>
                                                          <Insets bottom="5.0" top="5.0" />
                                                       </VBox.margin>
                                                    </ImageView>
-                  								  <ImageView fx:id="buttonDown" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  								  <ImageView fx:id="buttonDown" fitHeight="40.0" fitWidth="40.0" onMouseReleased="#decreaseTemp" pickOnBounds="true" preserveRatio="true">
                                                       <VBox.margin>
                                                          <Insets bottom="5.0" top="5.0" />
                                                       </VBox.margin>
                                                    </ImageView>
                                                 </children>
                                              </VBox>
+                                             <Text fx:id="temperatureControl" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="20 C" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                                <font>
+                                                   <Font name="System Bold" size="32.0" />
+                                                </font>
+                                             </Text>
                                           </children>
                                        </GridPane>
                                     </children>

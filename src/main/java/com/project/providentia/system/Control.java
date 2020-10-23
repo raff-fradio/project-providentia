@@ -4,6 +4,9 @@ import java.util.HashMap;
 
 public class Control {
 	
+	private final int MIN_TEMP = 16;
+	private final int MAX_TEMP = 30;
+	
 	private int temperature;
 	private HashMap<String, Boolean> lights;
 	
@@ -21,7 +24,7 @@ public class Control {
 		return temperature;
 	}
 	public void setTemperature(int temperature) {
-		this.temperature = temperature;
+		if (temperature >= MIN_TEMP && temperature <= MAX_TEMP) this.temperature = temperature;
 	}
 	public boolean getLight(String key) {
 		return lights.get(key);
