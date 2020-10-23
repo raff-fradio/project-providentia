@@ -1,19 +1,14 @@
 package com.project.providentia;
 
+import com.project.providentia.system.Sensor;
+
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.stage.WindowEvent;
-
-import com.project.providentia.system.SensorData;
-import com.project.providentia.system.Randomizer;
-import com.project.providentia.system.Status;
-import com.project.providentia.system.Sensor;
 
 public class App extends Application {
 
