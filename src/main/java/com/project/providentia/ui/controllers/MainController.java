@@ -204,7 +204,7 @@ public class MainController implements Initializable, Observer {
 	        dateLabel.setText(currentDate.format(dateFormat));
 	        clockLabel.setText(currentTime.format(clockFormat));
 	        
-	        boolean night = (currentTime.getHour() < 6 && currentTime.getHour() >= 18);
+	        boolean night = (currentTime.getHour() < 6 || currentTime.getHour() >= 18);
 	        status.setOutdoorLight(night);
 	        
 	    }),
